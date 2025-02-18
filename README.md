@@ -64,3 +64,7 @@ This project uses:
 - CSV data format for easy maintenance
 
 For detailed deployment options, check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying).
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
