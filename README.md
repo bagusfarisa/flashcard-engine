@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Flashcard Engine
+
+A customizable flashcard application built with Next.js for learning vocabulary or any other study materials.
 
 ## Getting Started
 
-First, run the development server:
+1. Clone this repository:
+```bash
+git clone https://github.com/YOUR_USERNAME/flashcard-engine.git
+cd flashcard-engine
+```
 
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Customize your flashcards:
+- Open `/public/dataset.csv`
+- Modify the content while keeping the header row intact:
+  ```
+  id,word,meaning,answer,tag,sentence_example,sentence_meaning
+  ```
+- Each row represents a flashcard with its properties
+- Save your changes
+
+4. Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see your flashcards in action.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The easiest way to deploy your flashcard app is through Vercel:
+
+1. Push your customized version to GitHub
+2. Visit [Vercel](https://vercel.com/new)
+3. Import your GitHub repository
+4. Click "Deploy"
+
+Your flashcard app will be live in minutes!
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+This project uses:
+- [Next.js](https://nextjs.org/docs) - The React framework
+- [Geist Font](https://vercel.com/font) - Custom typography
+- CSV data format for easy maintenance
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For detailed deployment options, check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying).
