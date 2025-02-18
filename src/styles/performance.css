@@ -1,0 +1,86 @@
+/* Performance optimizations for animations and interactions */
+.swipe-container {
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  contain: layout style paint;
+}
+
+.kanji-card {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  contain: layout style paint;
+}
+
+.card-input {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Optimize paint performance */
+.optimize-gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform;
+  contain: layout style paint;
+}
+
+/* Optimize transitions */
+.smooth-transition {
+  transition-timing-function: var(--ease-spring);
+}
+
+.optimize-transitions {
+  will-change: transform, opacity;
+  transition: transform 0.2s var(--ease-spring),
+              opacity 0.2s var(--ease-spring);
+}
+
+/* Framer Motion shared animations */
+.shared-card-spring {
+  --card-spring-stiffness: 300;
+  --card-spring-damping: 30;
+  contain: layout style paint;
+}
+
+/* Reduce paint area for fixed elements */
+.fixed-element {
+  contain: layout style paint;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Optimize box shadows */
+.optimized-shadow {
+  will-change: box-shadow;
+  transition: box-shadow var(--duration-normal) var(--ease-spring);
+}
+
+.animate-card {
+  will-change: transform, opacity;
+}
+
+.reduce-motion {
+  --card-spring-stiffness: 400;
+  --card-spring-damping: 40;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-card {
+    transition-duration: 0.1s;
+  }
+  
+  .optimize-transitions {
+    transition-duration: 0.1s;
+  }
+  
+  .kanji-card {
+    transition: transform 0.1s ease-out,
+                opacity 0.1s ease-out;
+  }
+}

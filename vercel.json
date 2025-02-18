@@ -1,0 +1,17 @@
+{
+  "headers": [
+    {
+      "source": "/kanji.csv",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/csv"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=300, stale-while-revalidate"
+        }
+      ]
+    }
+  ]
+}

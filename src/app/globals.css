@@ -1,0 +1,114 @@
+/* eslint-disable */
+/* @type {import('tailwindcss').Config} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Base colors */
+  --background: #ffffff;
+  --foreground: #171717;
+  --color-green-500: #22c55e;
+  
+  /* Layout constants */
+  --vvh: 100vh;
+  --vv-offset: 0px;
+  --vv-scale: 1;
+  
+  /* Animation durations */
+  --duration-fast: 150ms;
+  --duration-normal: 200ms;
+  --duration-slow: 300ms;
+  
+  /* Animation easings */
+  --ease-spring: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Elevation shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+@layer base {
+  html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    height: var(--vvh);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: fixed;
+    top: var(--vv-offset);
+    left: 0;
+    right: 0;
+    overscroll-behavior: none;
+    touch-action: none;
+    transform-origin: top;
+    transform: translateY(0) scale(var(--vv-scale));
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .interactive-card {
+    @apply transition-transform duration-200 ease-spring hover:scale-[1.02] active:scale-[0.98];
+  }
+  
+  .button-base {
+    @apply px-4 py-2 rounded-full font-medium transition-all duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+  
+  .button-primary {
+    @apply button-base bg-primary-600 text-white hover:bg-primary-700;
+  }
+  
+  .button-secondary {
+    @apply button-base bg-white text-neutral-700 border border-neutral-200 hover:bg-neutral-50;
+  }
+
+  .text-green-500 {
+    color: var(--color-green-500);
+  }
+
+  .animate-card {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    perspective: 1000px;
+    will-change: transform;
+  }
+
+  .swipe-container {
+    touch-action: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+}
+
+@layer utilities {
+  .pb-safe {
+    padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+  }
+  
+  .smooth-shadow {
+    @apply transition-shadow duration-200;
+  }
+  
+  .optimize-gpu {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    will-change: transform;
+  }
+}
