@@ -1,6 +1,6 @@
 # Flashcard Engine
 
-A customizable flashcard application built with Next.js for learning vocabulary or any other study materials.
+A customizable flashcard application built with Next.js for learning vocabulary or any other study materials. This engine powers [kantoku.fun](https://kantoku.fun), a Japanese language learning platform.
 
 ## Getting Started
 
