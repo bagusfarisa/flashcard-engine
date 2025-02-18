@@ -4,11 +4,17 @@ A customizable flashcard application built with Next.js for learning vocabulary 
 
 ## Getting Started
 
-1. Clone this repository:
-```bash
-git clone https://github.com/YOUR_USERNAME/flashcard-engine.git
-cd flashcard-engine
-```
+1. Get the code:
+   - Option A: Clone this repository:
+     ```bash
+     git clone https://github.com/YOUR_USERNAME/flashcard-engine.git
+     cd flashcard-engine
+     ```
+   - Option B: Download ZIP:
+     1. Click the green "Code" button above
+     2. Select "Download ZIP"
+     3. Extract the ZIP file
+     4. Open the extracted folder
 
 2. Install dependencies:
 ```bash
